@@ -179,7 +179,7 @@
 
   <script>
     async function pay() {
-      const response = await fetch('http://46.19.65.156:3000/create-payment', {
+      const response = await fetch('https://d-s.onrender.com/create-payment', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ amount: '1490.00' })
