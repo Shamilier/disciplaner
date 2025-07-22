@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Disciplaner</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: sans-serif;
+      background-color: #fff;
+      color: #000;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .container {
+      padding: 20px;
+      max-width: 480px;
+      margin: auto;
+    }
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: #000 url('bg-table.jpg') center/cover no-repeat;
+      color: white;
+      position: relative;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+    .hero h1 {
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+    .hero p {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+    }
+    .btn {
+      display: inline-block;
+      background: #00cc66;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+    .section {
+      margin: 40px 0;
+    }
+    .section h2 {
+      font-size: 1.5em;
+      margin-bottom: 16px;
+    }
+    .features ul {
+      list-style: none;
+      padding-left: 0;
+      font-size: 1.1em;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .features li {
+      background: #f9f9f9;
+      padding: 12px 16px;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+    }
+    .features li i {
+      margin-right: 8px;
+      color: #00cc66;
+    }
+    .audience li, .faq li {
+      margin-bottom: 12px;
+      list-style: none;
+    }
+    .quote {
+      background: #f0f0f0;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 12px;
+      font-style: italic;
+    }
+    .steps li {
+      margin-bottom: 10px;
+    }
+    .footer {
+      text-align: center;
+      font-size: 0.9em;
+      color: #555;
+      margin-top: 60px;
+      padding-bottom: 40px;
+    }
+    .footer a {
+      color: #000;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="hero-content container">
+      <h1>Disciplaner</h1>
+      <p>30 дней контроля. Изменись или оставайся тем, кто ты есть.</p>
+      <a class="btn" href="https://boosty.to/yourproduct">Получить шаблон – 1 490 ₽</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="section features">
+      <h2>Что внутри</h2>
+      <ul>
+        <li><i class="fa-solid fa-check-circle"></i> Трекер привычек</li>
+        <li><i class="fa-solid fa-chart-line"></i> Графики и анализ</li>
+        <li><i class="fa-solid fa-bullseye"></i> Цели месяца</li>
+        <li><i class="fa-solid fa-book-open"></i> Дневник</li>
+        <li><i class="fa-solid fa-gears"></i> Без мотивации — только система</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Для кого это</h2>
+      <ul class="audience">
+        <li>• Студенты, фрилансеры, стартаперы</li>
+        <li>• Кто чувствует, что теряет контроль</li>
+        <li>• Кто уже пробовал — но сливался</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Отзывы</h2>
+      <div class="quote">«Я не знал, что дисциплина может быть визуальной. Теперь знаю.»</div>
+      <div class="quote">«Сначала больно. Потом под контролем.»</div>
+    </div>
+
+    <div class="section">
+      <h2>Как это работает</h2>
+      <ul class="steps">
+        <li>1. Оплати 1 490 ₽</li>
+        <li>2. Получи ссылку сразу после оплаты</li>
+        <li>3. Сделай копию Google Таблицы</li>
+        <li>4. Начни использовать сегодня</li>
+      </ul>
+      <a class="btn" href="https://boosty.to/yourproduct">Хочу попробовать</a>
+    </div>
+
+    <div class="section">
+      <h2>FAQ / Гарантии</h2>
+      <ul class="faq">
+        <li><strong>Можно ли вернуть деньги?</strong> — Нет, продукт цифровой</li>
+        <li><strong>Подойдёт ли мне?</strong> — Если хочешь стать собранным — да</li>
+        <li><strong>Это сложно?</strong> — Всё просто: ты либо отмечаешь ✅, либо нет</li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      <p>Контакты: <a href="https://t.me/disciplaner">Telegram</a>, <a href="https://instagram.com/disciplaner">Instagram</a></p>
+      <p>© Disciplaner 2025</p>
+      <p>Создано с болью, чтобы ты жил с контролем</p>
+    </div>
+  </div>
+</body>
+</html>
