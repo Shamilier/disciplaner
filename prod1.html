@@ -3237,17 +3237,23 @@ document.addEventListener('DOMContentLoaded', function () {
   const payBtn = document.getElementById("payButton");
 
   // Функция для навешивания обработчиков на кнопки
-  function attachModalToButtons() {
-    const buttons = document.querySelectorAll('.sqs-block-button-element--primary');
+function attachModalToButtons() {
+  const buttons = document.querySelectorAll('.sqs-block-button-element--primary');
+  
   buttons.forEach(btn => {
     if (!btn.dataset.modalAttached) {
-      btn.addEventListener('click', function (e) {
-        e.preventDefault(); // отменяем переход по ссылке
-        e.stopImmediatePropagation(); // останавливаем встроенные скрипты Squarespace
-        modal.style.display = "flex"; // открываем модалку
-        console.log("✅ Модалка открыта без POST-запроса:", btn.textContent.trim());
+      // Клонируем кнопку без встроенных обработчиков Squarespace
+      const cleanBtn = btn.cloneNode(true);
+      btn.parentNode.replaceChild(cleanBtn, btn);
+
+      // Навешиваем свой обработчик
+      cleanBtn.addEventListener('click', function (e) {
+        e.preventDefault();
+        modal.style.display = "flex";
+        console.log("✅ Модалка открыта (обработчики Squarespace удалены):", cleanBtn.textContent.trim());
       });
-      btn.dataset.modalAttached = "true";
+
+      cleanBtn.dataset.modalAttached = "true";
     }
   });
 }
