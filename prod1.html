@@ -3239,19 +3239,18 @@ document.addEventListener('DOMContentLoaded', function () {
   // Функция для навешивания обработчиков на кнопки
   function attachModalToButtons() {
     const buttons = document.querySelectorAll('.sqs-block-button-element--primary');
-    buttons.forEach(btn => {
-      if (!btn.dataset.modalAttached) { // чтобы не навешивать повторно
-        btn.addEventListener('click', function (e) {
-          e.preventDefault();
-          if (modal) {
-            modal.style.display = "flex";
-          }
-        });
-        btn.dataset.modalAttached = "true";
-        console.log("✅ Обработчик добавлен на кнопку:", btn.textContent.trim());
-      }
-    });
-  }
+  buttons.forEach(btn => {
+    if (!btn.dataset.modalAttached) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault(); // отменяем переход по ссылке
+        e.stopImmediatePropagation(); // останавливаем встроенные скрипты Squarespace
+        modal.style.display = "flex"; // открываем модалку
+        console.log("✅ Модалка открыта без POST-запроса:", btn.textContent.trim());
+      });
+      btn.dataset.modalAttached = "true";
+    }
+  });
+}
 
   // Навешиваем обработчики сразу и повторяем через интервал (на случай динамической загрузки)
   attachModalToButtons();
